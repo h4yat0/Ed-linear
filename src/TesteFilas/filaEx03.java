@@ -1,34 +1,31 @@
 package TesteFilas;
 
-import ed.linear.Fila;
+
+import ed.linear.FilaInt;
 
 import java.util.Scanner;
 
-public class ex03 {
+public class filaEx03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Fila fila = new Fila(12);
-        Fila filaAux = new Fila(fila.capacidade());
+        FilaInt fila = new FilaInt(12);
 
         for (int i = 0; i < fila.capacidade(); i++) {
             System.out.printf("Digite o %d° número: ", i+1);
-//            fila.adicionar(i);
             fila.adicionar(sc.nextInt());
         }
 
         System.out.println("Fila: " + fila);
-        for (int i = 0; i < fila.capacidade(); i++) {
-            int aux = fila.elemento(0);
 
-            if (aux%2 != 0){
-                filaAux.adicionar(aux);
-            }
+        for (int i = 0; i < fila.capacidade(); i++) {
+            if (fila.elemento(0)%2 != 0){
+                int aux = fila.elemento(0);
+                fila.remover();
+                fila.adicionar(aux);
+            } else if (fila.elemento(0)%2 == 0)
             fila.remover();
         }
 
-        for (int i = 0; i < filaAux.comprimento(); i++) {
-            fila.adicionar(filaAux.elemento(i));
-        }
         System.out.println("Fila sem pares: " + fila);
 
     }

@@ -1,17 +1,19 @@
-package TesteFilas;
+package TesteListas;
+
+import ed.linear.Lista;
 
 import java.util.Scanner;
-import ed.linear.Fila;
 
-public class ex02 {
+public class lista02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Fila positivos = new Fila();
-        Fila negativos = new Fila();
+        Lista positivos = new Lista(10);
+        Lista negativos = new Lista(10);
 
         for (int i = 0; i < 10; i++) {
-            System.out.printf("Digite o %d° número: ", i+1);
-            int temp = sc.nextInt();
+            System.out.printf("Digite o %d° número real: ", i+1);
+
+            double temp = sc.nextDouble();
 
             if (temp == 0){
                 break;
@@ -19,8 +21,10 @@ public class ex02 {
 
             if (temp > 0){
                 positivos.adicionar(temp);
+                System.out.println("Valor inserido: " + positivos.elemento(positivos.comprimento()-1));
             } else {
                 negativos.adicionar(temp);
+                System.out.println("Valor inserido: " + negativos.elemento(negativos.comprimento()-1));
             }
         }
         System.out.println("Positivos: " + positivos);

@@ -1,15 +1,17 @@
 package TesteFilas;
 
-import ed.linear.Fila;
+
+
+import ed.linear.FilaInt;
 
 import java.util.Scanner;
 
-public class ex04 {
+public class filaEx04 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int choice;
-        Fila filaComum = new Fila();
-        Fila filaPrefe = new Fila();
+        FilaInt filaComum = new FilaInt();
+        FilaInt filaPrefe = new FilaInt();
 
         for (int h = 0; h < filaComum.capacidade(); h++) {
             do {

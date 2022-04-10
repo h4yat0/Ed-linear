@@ -26,7 +26,6 @@ public class pilhasEx04 {
                     principal.remover();
                 }
             }
-
         }
         System.out.println("Pilha: " + principal);
         System.out.println("Multiplos de 3: " + multiplosDeTres);
